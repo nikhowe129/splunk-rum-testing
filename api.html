@@ -72,7 +72,7 @@
         imageContainer.src = imageUrl;
         imageContainer.style.display = "block";
     }
-    fetch("http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true")
+    fetch("https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true")
         .then(response => response.json())
         .then(data => {
             console.log(data)
