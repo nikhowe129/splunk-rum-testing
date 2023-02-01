@@ -52,7 +52,9 @@
                 </div>
             </div>
         </div>
-        <button onclick="mockData()">Test POST Request</button>
+        <button onclick="mockDataSuccessful()">Test Successful POST Request</button>
+        <button onclick="mockDataUnsuccessful()">Test Unsucessful POST Request</button>
+
         <hr>
     </div>
 
@@ -84,7 +86,7 @@
         });
 </script>
 <script>
-    function mockData() {
+    function mockDataSuccessful() {
         fetch("https://00egg.mocklab.io/json", {
             method: "POST",
             headers: {
@@ -104,6 +106,29 @@
             })
             .catch(error => {
                 console.error(error);
+            });
+    }
+
+    function mockDataUnsuccessful() {
+        fetch("https://00egg.mocklab.io/json", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "id": 12345,
+            })
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error(error);
+                alert(error);
             });
     }
 </script>
