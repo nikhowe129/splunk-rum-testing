@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.signalfx.com/o11y-gdi-rum/latest/splunk-otel-web.js" crossorigin="anonymous"></script>
+    <script>
+        SplunkRum.init({
+            beaconUrl: "https://rum-ingest.jp0.signalfx.com/v1/rum",
+            rumAuth: "Kjj3wlEMuTR6d1VZoL6-TQ",
+            app: "RUM Testing",
+            environment: "dev"
+        });
+    </script>
     <title>Kraken</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
